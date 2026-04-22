@@ -153,14 +153,12 @@ export default function Footer() {
           className="pointer-events-none relative z-0 mt-10 w-full md:mt-12"
           aria-hidden="true"
         >
-          <div className="relative w-full aspect-[3872/2592]">
+          <div className="relative h-[18rem] w-full md:h-[24rem] lg:h-[29rem]">
             <div className="absolute bottom-2 left-[6%] h-16 w-28 rounded-full bg-white/35 blur-2xl md:h-20 md:w-36" />
             <div className="absolute bottom-0 left-1/2 h-20 w-[42%] -translate-x-1/2 rounded-full bg-white/30 blur-3xl md:h-24" />
             <div className="absolute bottom-4 right-[8%] h-14 w-24 rounded-full bg-white/28 blur-2xl md:h-16 md:w-32" />
 
-            <div className="absolute inset-x-0 bottom-0 mx-auto h-full w-full overflow-hidden rounded-t-[96px] md:rounded-t-[140px] lg:rounded-t-[180px]">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#8bb8d5]/10 via-transparent to-white/8" />
-
+            <div className="absolute inset-x-0 bottom-0 mx-auto h-full w-full overflow-hidden">
               <div className="absolute inset-0">
                 <Image
                   src="/hero.jpg"
@@ -171,10 +169,7 @@ export default function Footer() {
                 />
               </div>
 
-              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#8bb8d5] via-[#8bb8d5]/10 to-transparent md:h-28" />
-              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#8bb8d5] via-[#8bb8d5]/56 to-transparent md:h-32" />
-              <div className="absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-[#8bb8d5]/55 to-transparent md:w-10" />
-              <div className="absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-[#8bb8d5]/55 to-transparent md:w-10" />
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white/55 via-white/14 to-transparent md:h-32" />
             </div>
           </div>
         </div>
