@@ -8,13 +8,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const navLinks = {
-  "Main pages": ["Home", "Listings", "Blog", "About", "Contact"],
-  "Other pages": ["Listing", "Blog", "Agent", "Privacy policy", "404"],
-  "Follow us": ["Linkedin", "Youtube", "X", "Meta", "Tiktok"],
+  "Main pages": ["Home", "Homes", "Advisory", "About", "Book Visit"],
+  "Other pages": ["Neighbourhoods", "Journal", "NRI Desk", "Privacy policy", "Contact"],
+  "Follow us": ["LinkedIn", "Instagram", "YouTube", "X", "WhatsApp"],
 };
 
 export default function Footer() {
-  const footerRef = useRef<HTMLElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
   const taglineRef = useRef<HTMLParagraphElement>(null);
   const colsRef = useRef<HTMLDivElement>(null);
@@ -98,8 +98,8 @@ export default function Footer() {
                 ref={taglineRef}
                 className="mt-5 max-w-xs text-base leading-relaxed text-white/80 md:text-[1.05rem]"
               >
-                Signature property advisory for buyers, sellers, and investors
-                who want a calmer path to exceptional real estate.
+                Luxury property advisory for buyers, sellers, and investors
+                across India&apos;s most dynamic city markets.
               </p>
             </div>
 

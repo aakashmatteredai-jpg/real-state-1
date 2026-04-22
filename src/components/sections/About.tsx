@@ -7,41 +7,41 @@ import { useRef, useEffect } from "react";
 import SectionLabel from "../SectionLabel";
 
 const stats = [
-  { value: "12+", label: "Years Experience" },
-  { value: "40+", label: "Cities Covered" },
-  { value: "500+", label: "Properties Sold" },
+  { value: "14+", label: "Years In Advisory" },
+  { value: "18+", label: "Indian Cities Covered" },
+  { value: "₹1,200 Cr+", label: "Closed Deal Value" },
 ];
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "Mitchell Ventures",
+    name: "Aditi Kapoor",
+    role: "Founder, Kapoor Studio",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
-    text: "Rialta made the entire buying journey effortless. Their deep market knowledge and white-glove service perfectly aligned with what we needed.",
+    text: "Rialta helped us compare South Mumbai options without the usual pressure. Their pricing guidance and builder checks saved us weeks of uncertainty.",
   },
   {
-    name: "James Harlow",
-    role: "Harlow Group",
+    name: "Rohan Malhotra",
+    role: "Director, Malhotra Foods",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-    text: "Since working with Rialta, every property transaction feels transformed. Their attention isn't just aesthetic — it enhances outcomes every time.",
+    text: "From shortlist to negotiation, the team stayed practical and sharp. We closed our Gurugram home at the right value and with zero chaos.",
   },
   {
     name: "Priya Nair",
     role: "Nair Real Assets",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
-    text: "Rialta delivered beyond expectations. Their innovative approach and dedication made the entire experience truly exceptional. Highly recommended.",
+    text: "Their investor review for Bengaluru rentals was exactly what we needed: realistic yields, better micro-market advice, and cleaner paperwork support.",
   },
   {
-    name: "Tom Brennan",
-    role: "Brennan Estates",
+    name: "Arjun Menon",
+    role: "Product Lead, Fintech",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
-    text: "A game-changing experience from start to finish. Rialta turned our vision into reality with precision, creativity, and deep market expertise.",
+    text: "Rialta turned a confusing relocation into a smooth move. They understood commute, school zones, and lifestyle needs in a very grounded way.",
   },
   {
-    name: "Leila Osman",
-    role: "Osman Property Group",
+    name: "Neha Bansal",
+    role: "Partner, Bansal Holdings",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
-    text: "Working with Rialta felt like having a trusted partner every step of the way. Professional, attentive, and genuinely invested in our success.",
+    text: "We use Rialta whenever we need quick clarity on premium residential opportunities. Their team balances numbers, design quality, and legal diligence well.",
   },
 ];
 
@@ -111,7 +111,7 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={container} className="py-16 bg-[#FAF9F6]">
+    <section id="about" ref={container} className="py-16 bg-[#FAF9F6]">
       <div className="section-container">
         <div className="bg-[#EEF2F8] rounded-3xl pt-14 pb-10 overflow-hidden">
 
@@ -120,27 +120,29 @@ export default function About() {
 
             {/* Left: text + CTAs */}
             <div className="about-content">
-              <SectionLabel>About Rialta</SectionLabel>
+              <SectionLabel>About Rialta India</SectionLabel>
               <h2 className="text-4xl md:text-5xl font-semibold text-rialta-navy leading-tight mb-6">
-                A Boutique Approach to Property Sales
+                Local insight for India&apos;s premium home buyers and sellers
               </h2>
               <p className="text-rialta-navy/60 text-base leading-relaxed mb-4">
-                Founded in 2012, Rialta has established itself as a leader in
-                premium residential and commercial real estate. Our curated team
-                of agents, analysts, and advisors brings deep expertise to every
-                transaction.
+                Founded in 2011, Rialta has grown into a trusted advisory for
+                premium residential transactions across Mumbai, Bengaluru,
+                Gurugram, Hyderabad, Pune, Goa, and other fast-moving urban
+                markets. Our team combines brokerage experience with pricing,
+                design, and documentation expertise.
               </p>
               <p className="text-rialta-navy/60 text-base leading-relaxed mb-10">
-                We believe real estate should not only be transactional but
-                transformative — reflecting the identity and ambitions of each
-                client we serve.
+                We believe Indian real estate should feel less opaque and more
+                intentional, with better neighbourhood context, cleaner
+                negotiations, and advice that matches the way families,
+                founders, and investors actually make decisions.
               </p>
               <div className="flex flex-wrap gap-4">
                 <button className="px-6 py-3 border border-rialta-navy/30 rounded-full text-rialta-navy text-sm font-medium hover:bg-rialta-navy/5 transition-colors">
-                  Explore Properties
+                  Explore Homes
                 </button>
                 <button className="btn-premium flex items-center gap-2 group px-6 py-3 rounded-full text-sm">
-                  Get In Touch
+                  Book Consultation
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>

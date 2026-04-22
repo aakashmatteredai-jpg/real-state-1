@@ -10,8 +10,8 @@ const services = [
   {
     id: 1,
     icon: Building2,
-    title: "Property Sales",
-    description: "We connect buyers and sellers through a seamless, premium experience — blending market expertise with white-glove service.",
+    title: "Luxury Home Sales",
+    description: "We guide premium residential sales across India&apos;s top city markets with tighter positioning, stronger negotiations, and a smoother close.",
     image: "https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=800&auto=format&fit=crop",
     wide: true,
     imageLeft: true,
@@ -19,16 +19,16 @@ const services = [
   {
     id: 2,
     icon: FileText,
-    title: "Market Advisory",
-    description: "Every transaction begins with meticulous research, ensuring precision, timing, and maximum value for our clients.",
+    title: "Micro-Market Advisory",
+    description: "We help you compare neighbourhoods, builder quality, and live pricing trends before you commit in fast-moving Indian metros.",
     image: null,
     wide: false,
   },
   {
     id: 3,
     icon: Layers,
-    title: "Interior Staging",
-    description: "Our team crafts visually compelling presentations that enhance appeal and accelerate sales at every price point.",
+    title: "Staging And Styling",
+    description: "From show-flat styling to listing presentation, we shape homes so they feel premium, current, and easier to sell well.",
     image: null,
     wide: false,
   },
@@ -36,7 +36,7 @@ const services = [
     id: 4,
     icon: Command,
     title: "Investment Strategy",
-    description: "Our expertise ensures professionalism and reliability, guiding your portfolio decisions with clarity and confidence.",
+    description: "We evaluate yields, capital appreciation, developer strength, and entry timing for investors buying in cities like Bengaluru, Pune, and Gurugram.",
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=800&auto=format&fit=crop",
     wide: true,
     imageLeft: true,
@@ -44,8 +44,8 @@ const services = [
   {
     id: 5,
     icon: ListChecks,
-    title: "Due Diligence",
-    description: "Thorough vetting and legal review so every acquisition is informed, protected, and positioned for long-term success.",
+    title: "Legal Due Diligence",
+    description: "We coordinate title checks, society paperwork, RERA details, and transaction support so buyers move with more confidence.",
     image: null,
     wide: false,
   },
@@ -53,15 +53,15 @@ const services = [
     id: 6,
     icon: Link2,
     title: "Buyer Matching",
-    description: "Precision matching of qualified buyers to the right properties — reducing time on market and maximising outcomes.",
+    description: "Qualified buyers are matched to the right layout, locality, and budget band, reducing friction and improving final outcomes.",
     image: null,
     wide: false,
   },
   {
     id: 7,
     icon: Warehouse,
-    title: "Property Management",
-    description: "End-to-end management solutions that protect your asset, satisfy tenants, and optimise returns over time.",
+    title: "Rental Asset Management",
+    description: "For busy owners and NRI clients, we support leasing, upkeep coordination, and long-term asset performance across key cities.",
     image: null,
     wide: false,
   },
@@ -113,8 +113,9 @@ export default function Services() {
               What we do best
             </h2>
             <p className="text-rialta-navy/55 text-base max-w-xl mx-auto leading-relaxed">
-              From first consultation to final handover, our services cover every
-              aspect of premium property sales, advisory, and management.
+              From first consultation to possession, our services cover premium
+              home sales, advisory, and asset management across India&apos;s most
+              in-demand neighbourhoods.
             </p>
           </div>
 

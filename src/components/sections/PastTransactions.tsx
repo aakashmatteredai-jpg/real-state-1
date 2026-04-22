@@ -8,17 +8,17 @@ import SectionLabel from "../SectionLabel";
 const transactions = [
   {
     id: 1,
-    title: "Family Haven",
-    price: "$690,000",
-    description: "A thoughtfully designed family duplex near schools and key community amenities. Planned for modern family living, it offers efficient layouts, durable materials, and long-term comfort.",
+    title: "Worli Sea View Residence",
+    price: "₹8.4 Cr",
+    description: "A high-floor Mumbai residence secured with sharper negotiation, builder due diligence, and a cleaner path to registration for an NRI family.",
     image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=2000&auto=format&fit=crop",
     status: "Sold"
   },
   {
     id: 2,
-    title: "Urban Loft",
-    price: "$760,000",
-    description: "A modern urban loft featuring striking double-height ceilings and expansive industrial-style windows. Crafted for city living, the space balances openness with clearly defined zones.",
+    title: "Indiranagar Garden Home",
+    price: "₹4.95 Cr",
+    description: "A Bengaluru premium home positioned around school access, commute ease, and long-term resale value, resulting in a confident close for both sides.",
     image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=2000&auto=format&fit=crop",
     status: "Sold"
   }
@@ -41,12 +41,13 @@ export default function PastTransactions() {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-32 bg-[#FAF9F6]">
+    <section id="transactions" ref={container} className="py-32 bg-[#FAF9F6]">
       <div className="section-container mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div className="max-w-2xl">
           <SectionLabel>Past Transactions</SectionLabel>
           <h2 className="text-4xl md:text-5xl font-medium text-rialta-navy leading-tight">
-            A snapshot of closed deals highlighting pricing accuracy, market timing, and trusted client relationships.
+            Recent closings that show how local demand insight, precise pricing,
+            and calm execution create better outcomes in Indian city markets.
           </h2>
         </div>
         <button className="btn-premium whitespace-nowrap">

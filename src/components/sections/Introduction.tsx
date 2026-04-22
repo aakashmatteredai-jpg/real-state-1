@@ -55,9 +55,9 @@ export default function Introduction() {
           <SectionLabel>Introduction</SectionLabel>
         </div>
         <h2 className="intro-text text-3xl md:text-5xl font-medium max-w-4xl mx-auto leading-tight text-rialta-navy mt-6">
-          Discover a refined approach to real estate where design, data, and
-          trust come together to simplify your journey and elevate every
-          decision.
+          Discover a refined property experience shaped for Indian buyers and
+          sellers, where local market insight, transparent pricing, and clear
+          guidance keep every decision confident.
         </h2>
       </div>
 
