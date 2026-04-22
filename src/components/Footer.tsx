@@ -28,6 +28,8 @@ export default function Footer() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: footerRef.current,
@@ -62,34 +64,34 @@ export default function Footer() {
         )
         .fromTo(
           imageRef.current,
-          { y: 56, opacity: 0 },
-          { y: 0, opacity: 1, duration: 1, ease: "power2.out" },
+          { opacity: 0 },
+          { opacity: 1, duration: 0.9, ease: "power2.out" },
           0.15
         );
 
-      gsap.to(imageRef.current, {
-        y: -34,
-        ease: "none",
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
+      if (isDesktop) {
+        gsap.to(imageRef.current, {
+          y: -34,
+          ease: "none",
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        });
+      }
     }, footerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <footer className="bg-transparent px-4 md:px-6 lg:px-8">
+    <footer className="bg-transparent sm:px-4 md:px-6 lg:px-8">
       <div
         ref={footerRef}
-        className="relative -mx-4 overflow-hidden text-white md:-mx-6 lg:-mx-8"
+        className="relative overflow-hidden bg-[#1a2348] text-white sm:-mx-4 md:-mx-6 lg:-mx-8"
       >
-        <div className="pointer-events-none absolute inset-0 " />
-
         <div
           ref={imageRef}
           className="pointer-events-none absolute inset-0 z-0"
@@ -107,24 +109,24 @@ export default function Footer() {
           <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white/55 via-white/14 to-transparent md:h-32" />
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[27rem] max-w-[86rem] flex-col px-4 pt-8 pb-5 sm:min-h-[31rem] sm:px-5 sm:pt-10 sm:pb-7 md:min-h-[35rem] md:px-10 md:pt-16 md:pb-10 lg:min-h-[39rem] lg:px-14 lg:pt-20 lg:pb-12">
-          <div className="grid gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-20">
-            <div className="max-w-md">
+        <div className="relative z-10 mx-auto flex max-w-[86rem] flex-col px-4 pt-6 pb-4 sm:min-h-[31rem] sm:px-5 sm:pt-10 sm:pb-7 md:min-h-[35rem] md:px-10 md:pt-16 md:pb-10 lg:min-h-[39rem] lg:px-14 lg:pt-20 lg:pb-12">
+          <div className="grid grid-cols-[minmax(0,1fr)_112px] items-start gap-5 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-20">
+            <div className="max-w-none sm:max-w-md">
               <div ref={logoRef}>
-                <span className="text-[2.1rem] font-semibold tracking-[-0.05em] text-white md:text-[2.6rem]">
+                <span className="text-[1.85rem] font-semibold tracking-[-0.05em] text-white sm:text-[2.1rem] md:text-[2.6rem]">
                   Rialta
                 </span>
               </div>
 
               <p
                 ref={taglineRef}
-                className="mt-3 max-w-xs text-sm leading-relaxed text-white/80 sm:mt-5 sm:text-base md:text-[1.05rem]"
+                className="mt-3 max-w-[15rem] text-[0.92rem] leading-relaxed text-white/82 sm:mt-5 sm:max-w-xs sm:text-base md:text-[1.05rem]"
               >
                 Luxury property advisory for buyers, sellers, and investors
                 across India&apos;s most dynamic city markets.
               </p>
 
-              <div className="mt-5 space-y-2.5 text-sm text-white/82 sm:mt-8 sm:space-y-3">
+              <div className="mt-4 space-y-2 text-[0.82rem] text-white/82 sm:mt-8 sm:space-y-3 sm:text-sm">
                 {contactDetails.map((detail) => (
                   <a
                     key={detail.label}
@@ -140,19 +142,19 @@ export default function Footer() {
 
             <div
               ref={colsRef}
-              className="lg:justify-self-end"
+              className="self-start lg:justify-self-end"
             >
-              <div className="nav-col flex flex-col gap-3">
-                <h4 className="text-base font-semibold text-white">
+              <div className="nav-col flex flex-col gap-2 sm:gap-3">
+                <h4 className="text-sm font-semibold text-white sm:text-base">
                   Main pages
                 </h4>
 
-                <ul className="flex flex-col gap-2.5">
+                <ul className="flex flex-col gap-1.5 sm:gap-2.5">
                   {mainLinks.map((link) => (
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-base text-white/78 transition-colors duration-200 hover:text-white"
+                        className="text-[0.95rem] text-white/80 transition-colors duration-200 hover:text-white sm:text-base"
                       >
                         {link.label}
                       </a>
@@ -163,12 +165,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-auto">
-            <div className="mt-8 h-px w-full bg-white/28 sm:mt-10 md:mt-16" />
+          <div className="mt-6 sm:mt-auto">
+            <div className="mt-6 h-px w-full bg-white/28 sm:mt-10 md:mt-16" />
 
             <div
               ref={bottomRef}
-              className="flex flex-col gap-3 py-5 text-sm text-white/76 md:flex-row md:items-center md:justify-between md:py-6"
+              className="flex flex-col gap-2 py-3 text-[0.82rem] text-white/76 sm:gap-3 sm:py-5 sm:text-sm md:flex-row md:items-center md:justify-between md:py-6"
             >
               <span>Copyright © All rights reserved</span>
               <span>Made by Amar KZR</span>

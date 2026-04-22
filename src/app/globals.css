@@ -18,8 +18,12 @@
 }
 
 @layer base {
+  html {
+    overflow-x: hidden;
+  }
+
   body {
-    @apply bg-background text-foreground font-outfit antialiased selection:bg-rialta-tan selection:text-white;
+    @apply bg-background text-foreground font-outfit antialiased selection:bg-rialta-tan selection:text-white overflow-x-hidden;
   }
 
   /* Smooth scroll reset for Lenis */
