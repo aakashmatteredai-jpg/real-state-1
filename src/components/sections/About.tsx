@@ -111,37 +111,37 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" ref={container} className="py-16 bg-[#FAF9F6]">
+    <section id="about" ref={container} className="bg-[#FAF9F6] py-10 sm:py-14 md:py-16">
       <div className="section-container">
-        <div className="bg-[#EEF2F8] rounded-3xl pt-14 pb-10 overflow-hidden">
+        <div className="overflow-hidden rounded-[1.5rem] bg-[#EEF2F8] pt-6 pb-4 sm:rounded-[1.75rem] sm:pt-8 sm:pb-6 lg:rounded-3xl lg:pt-14 lg:pb-10">
 
           {/* Top grid — padded */}
-          <div className="px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-14">
+          <div className="mb-6 grid grid-cols-1 items-center gap-6 px-3 sm:mb-8 sm:px-4 md:px-8 lg:mb-14 lg:grid-cols-2 lg:gap-16 lg:px-10">
 
             {/* Left: text + CTAs */}
             <div className="about-content">
               <SectionLabel>About Rialta India</SectionLabel>
-              <h2 className="text-4xl md:text-5xl font-semibold text-rialta-navy leading-tight mb-6">
+              <h2 className="mb-4 text-[2rem] font-semibold leading-tight text-rialta-navy sm:text-4xl md:mb-6 md:text-5xl">
                 Local insight for India&apos;s premium home buyers and sellers
               </h2>
-              <p className="text-rialta-navy/60 text-base leading-relaxed mb-4">
+              <p className="mb-4 text-sm leading-relaxed text-rialta-navy/60 sm:text-base">
                 Founded in 2011, Rialta has grown into a trusted advisory for
                 premium residential transactions across Mumbai, Bengaluru,
                 Gurugram, Hyderabad, Pune, Goa, and other fast-moving urban
                 markets. Our team combines brokerage experience with pricing,
                 design, and documentation expertise.
               </p>
-              <p className="text-rialta-navy/60 text-base leading-relaxed mb-10">
+              <p className="mb-6 text-sm leading-relaxed text-rialta-navy/60 sm:mb-10 sm:text-base">
                 We believe Indian real estate should feel less opaque and more
                 intentional, with better neighbourhood context, cleaner
                 negotiations, and advice that matches the way families,
                 founders, and investors actually make decisions.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <button className="px-6 py-3 border border-rialta-navy/30 rounded-full text-rialta-navy text-sm font-medium hover:bg-rialta-navy/5 transition-colors">
+              <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-4">
+                <button className="w-full rounded-full border border-rialta-navy/30 px-5 py-3 text-sm font-medium text-rialta-navy transition-colors hover:bg-rialta-navy/5 sm:w-auto sm:px-6">
                   Explore Homes
                 </button>
-                <button className="btn-premium flex items-center gap-2 group px-6 py-3 rounded-full text-sm">
+                <button className="btn-premium group flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm sm:w-auto sm:px-6">
                   Book Consultation
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -149,16 +149,16 @@ export default function About() {
             </div>
 
             {/* Right: stats */}
-            <div className="stats-grid grid grid-cols-2 gap-4">
+            <div className="stats-grid grid grid-cols-2 gap-2.5 sm:gap-4">
               {stats.slice(0, 2).map((s) => (
-                <div key={s.label} className="stat-card bg-white rounded-2xl p-8 text-center shadow-sm">
-                  <p className="text-5xl font-semibold text-rialta-navy mb-2">{s.value}</p>
-                  <p className="text-rialta-navy/50 text-sm">{s.label}</p>
+                <div key={s.label} className="stat-card rounded-2xl bg-white p-4 text-center shadow-sm sm:p-6 md:p-8">
+                  <p className="mb-2 text-[2.2rem] font-semibold leading-none text-rialta-navy sm:text-5xl">{s.value}</p>
+                  <p className="text-xs text-rialta-navy/50 sm:text-sm">{s.label}</p>
                 </div>
               ))}
-              <div className="stat-card col-span-2 bg-white rounded-2xl p-8 text-center shadow-sm">
-                <p className="text-5xl font-semibold text-rialta-navy mb-2">{stats[2].value}</p>
-                <p className="text-rialta-navy/50 text-sm">{stats[2].label}</p>
+              <div className="stat-card col-span-2 rounded-2xl bg-white p-4 text-center shadow-sm sm:p-6 md:p-8">
+                <p className="mb-2 text-[2.2rem] font-semibold leading-none text-rialta-navy sm:text-5xl">{stats[2].value}</p>
+                <p className="text-xs text-rialta-navy/50 sm:text-sm">{stats[2].label}</p>
               </div>
             </div>
           </div>
@@ -166,30 +166,30 @@ export default function About() {
           {/* Marquee — bleeds edge to edge, no horizontal padding */}
           <div
             ref={marqueeRef}
-            className="w-full overflow-hidden cursor-default"
+            className="w-full cursor-default overflow-hidden px-3 sm:px-4 md:px-8 lg:px-0"
           >
             <div
               ref={marqueeInnerRef}
-              className="flex gap-5 w-max"
+              className="flex w-max gap-2.5 sm:gap-5"
               style={{ willChange: "transform" }}
             >
               {allCards.map((t, i) => (
                 <div
                   key={i}
-                  className="flex-shrink-0 w-[320px] bg-white rounded-2xl p-7 shadow-sm flex flex-col gap-5"
+                  className="flex w-[232px] flex-shrink-0 flex-col gap-3 rounded-2xl bg-white p-4 shadow-sm sm:w-[280px] sm:gap-5 sm:p-6 lg:w-[320px] lg:p-7"
                 >
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-3 sm:gap-4">
                     <img
                       src={t.avatar}
                       alt={t.name}
-                      className="w-12 h-12 rounded-full object-cover"
+                      className="h-10 w-10 rounded-full object-cover sm:h-12 sm:w-12"
                     />
                     <div>
                       <p className="font-semibold text-rialta-navy text-sm">{t.name}</p>
                       <p className="text-rialta-navy/40 text-xs">{t.role}</p>
                     </div>
                   </div>
-                  <p className="text-rialta-navy/60 text-sm leading-relaxed">{t.text}</p>
+                  <p className="text-sm leading-relaxed text-rialta-navy/60">{t.text}</p>
                 </div>
               ))}
             </div>

@@ -100,19 +100,19 @@ export default function Services() {
   }, { scope: container });
 
   return (
-    <section ref={container} className="py-16 bg-[#FAF9F6]">
+    <section ref={container} className="bg-[#FAF9F6] py-10 sm:py-14 md:py-16">
       <div className="section-container">
-        <div className="bg-[#EEF2F8] rounded-3xl px-10 py-14">
+        <div className="rounded-[1.5rem] bg-[#EEF2F8] px-3 py-8 sm:rounded-[1.75rem] sm:px-4 sm:py-10 md:px-8 lg:rounded-3xl lg:px-10 lg:py-14">
 
           {/* Header */}
-          <div className="services-header text-center mb-12">
-            <div className="flex justify-center mb-4">
+          <div className="services-header mb-8 text-center sm:mb-10 md:mb-12">
+            <div className="mb-3 flex justify-center sm:mb-4">
               <SectionLabel>Services</SectionLabel>
             </div>
-            <h2 className="text-4xl md:text-5xl font-semibold text-rialta-navy mb-4">
+            <h2 className="mb-3 text-3xl font-semibold text-rialta-navy sm:text-4xl md:mb-4 md:text-5xl">
               What we do best
             </h2>
-            <p className="text-rialta-navy/55 text-base max-w-xl mx-auto leading-relaxed">
+            <p className="mx-auto max-w-xl text-sm leading-relaxed text-rialta-navy/55 sm:text-base">
               From first consultation to possession, our services cover premium
               home sales, advisory, and asset management across India&apos;s most
               in-demand neighbourhoods.
@@ -120,52 +120,52 @@ export default function Services() {
           </div>
 
           {/* Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
 
             {/* Row 1: Wide card (image left) + small card */}
-            <div className="service-card bg-white rounded-2xl overflow-hidden flex flex-row shadow-sm md:col-span-1">
-              <div className="w-[45%] flex-shrink-0">
+            <div className="service-card flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm sm:flex-row md:col-span-1">
+              <div className="h-48 w-full flex-shrink-0 sm:h-auto sm:w-[45%]">
                 <img
                   src={firstService.image!}
                   alt={firstService.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-7 flex flex-col justify-center gap-3">
+              <div className="flex flex-col justify-center gap-3 p-4 sm:p-5 lg:p-7">
                 <FirstIcon size={28} className="text-rialta-navy/40" strokeWidth={1.5} />
-                <h3 className="text-xl font-semibold text-rialta-navy">{firstService.title}</h3>
+                <h3 className="text-lg font-semibold text-rialta-navy sm:text-xl">{firstService.title}</h3>
                 <p className="text-rialta-navy/55 text-sm leading-relaxed">{firstService.description}</p>
               </div>
             </div>
 
-            <div className="service-card bg-white rounded-2xl p-7 shadow-sm flex flex-col justify-between gap-3">
+            <div className="service-card flex flex-col justify-between gap-3 rounded-2xl bg-white p-4 shadow-sm sm:p-5 lg:p-7">
               <SecondIcon size={28} className="text-rialta-navy/40" strokeWidth={1.5} />
               <div>
-                <h3 className="text-xl font-semibold text-rialta-navy mb-2">{secondService.title}</h3>
+                <h3 className="mb-2 text-lg font-semibold text-rialta-navy sm:text-xl">{secondService.title}</h3>
                 <p className="text-rialta-navy/55 text-sm leading-relaxed">{secondService.description}</p>
               </div>
             </div>
 
             {/* Row 2: Small card + wide card (image right) */}
-            <div className="service-card bg-white rounded-2xl p-7 shadow-sm flex flex-col justify-between gap-3">
+            <div className="service-card flex flex-col justify-between gap-3 rounded-2xl bg-white p-4 shadow-sm sm:p-5 lg:p-7">
               <ThirdIcon size={28} className="text-rialta-navy/40" strokeWidth={1.5} />
               <div>
-                <h3 className="text-xl font-semibold text-rialta-navy mb-2">{thirdService.title}</h3>
+                <h3 className="mb-2 text-lg font-semibold text-rialta-navy sm:text-xl">{thirdService.title}</h3>
                 <p className="text-rialta-navy/55 text-sm leading-relaxed">{thirdService.description}</p>
               </div>
             </div>
 
-            <div className="service-card bg-white rounded-2xl overflow-hidden flex flex-row shadow-sm">
-              <div className="w-[45%] flex-shrink-0">
+            <div className="service-card flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm sm:flex-row">
+              <div className="h-48 w-full flex-shrink-0 sm:h-auto sm:w-[45%]">
                 <img
                   src={fourthService.image!}
                   alt={fourthService.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="p-7 flex flex-col justify-center gap-3">
+              <div className="flex flex-col justify-center gap-3 p-4 sm:p-5 lg:p-7">
                 <FourthIcon size={28} className="text-rialta-navy/40" strokeWidth={1.5} />
-                <h3 className="text-xl font-semibold text-rialta-navy">{fourthService.title}</h3>
+                <h3 className="text-lg font-semibold text-rialta-navy sm:text-xl">{fourthService.title}</h3>
                 <p className="text-rialta-navy/55 text-sm leading-relaxed">{fourthService.description}</p>
               </div>
             </div>
@@ -174,11 +174,11 @@ export default function Services() {
             {remainingServices.map((s) => (
               <div
                 key={s.id}
-                className="service-card bg-white rounded-2xl p-7 shadow-sm flex flex-col gap-3 md:col-span-1"
+                className="service-card flex flex-col gap-3 rounded-2xl bg-white p-4 shadow-sm sm:p-5 lg:p-7 md:col-span-1"
                 style={{ gridColumn: remainingServices.length === 3 ? "span 1" : undefined }}
               >
                 <s.icon size={28} className="text-rialta-navy/40" strokeWidth={1.5} />
-                <h3 className="text-xl font-semibold text-rialta-navy">{s.title}</h3>
+                <h3 className="text-lg font-semibold text-rialta-navy sm:text-xl">{s.title}</h3>
                 <p className="text-rialta-navy/55 text-sm leading-relaxed">{s.description}</p>
               </div>
             ))}

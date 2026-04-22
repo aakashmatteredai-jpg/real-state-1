@@ -238,11 +238,11 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" ref={container} className="bg-[#f4ede4] py-24 md:py-28">
+    <section id="contact" ref={container} className="bg-[#f4ede4] py-14 sm:py-18 md:py-24 lg:py-28">
       <div className="section-container">
-        <div className="contact-shell mx-auto max-w-6xl rounded-[2.6rem] bg-[#f7f1e8] p-3 shadow-[0_30px_80px_rgba(32,24,16,0.12)] md:p-4">
+        <div className="contact-shell mx-auto max-w-6xl rounded-[2rem] bg-[#f7f1e8] p-2 shadow-[0_30px_80px_rgba(32,24,16,0.12)] sm:rounded-[2.2rem] sm:p-3 md:rounded-[2.6rem] md:p-4">
           <div className="grid gap-3 lg:grid-cols-[320px_minmax(0,1fr)]">
-            <aside className="booking-info rounded-[2.1rem] bg-[#efe5d8] p-7 text-[#27231e] md:p-8">
+            <aside className="booking-info rounded-[1.6rem] bg-[#efe5d8] p-5 text-[#27231e] sm:rounded-[1.8rem] sm:p-6 md:rounded-[2.1rem] md:p-8">
               <div className="flex items-center gap-3">
                 <div className="flex h-13 w-13 items-center justify-center rounded-full bg-[linear-gradient(135deg,#c8893d,#6f4d26)] text-lg font-semibold text-white shadow-md">
                   R
@@ -257,11 +257,11 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-6 sm:mt-8">
                 <SectionLabel className="mb-4 text-[#6f655b]">
                   Book Appointment
                 </SectionLabel>
-                <h2 className="max-w-xs text-[2.2rem] font-semibold leading-[0.98] tracking-[-0.05em] text-[#23201c] md:text-[2.75rem]">
+                <h2 className="max-w-xs text-[1.95rem] font-semibold leading-[0.98] tracking-[-0.05em] text-[#23201c] sm:text-[2.2rem] md:text-[2.75rem]">
                   Book your free appointment
                 </h2>
                 <p className="mt-4 max-w-xs text-sm leading-relaxed text-[#6c6259] md:text-[0.95rem]">
@@ -270,7 +270,7 @@ export default function Contact() {
                 </p>
               </div>
 
-              <div className="mt-7 space-y-3 text-sm text-[#544c45]">
+              <div className="mt-6 space-y-3 text-sm text-[#544c45] sm:mt-7">
                 <div className="flex items-center gap-2.5">
                   <Clock3 size={16} className="text-[#7f7469]" />
                   <span>Mon to Sat, 09:00 to 17:00</span>
@@ -285,7 +285,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-8 flex items-center gap-3">
+              <div className="mt-6 flex items-center gap-3 sm:mt-8">
                 <a
                   aria-label="Instagram"
                   href="https://www.instagram.com/"
@@ -323,7 +323,7 @@ export default function Contact() {
               </div>
             </aside>
 
-            <div className="rounded-[2.1rem] bg-white p-7 text-rialta-navy md:p-8">
+            <div className="rounded-[1.6rem] bg-white p-5 text-rialta-navy sm:rounded-[1.8rem] sm:p-6 md:rounded-[2.1rem] md:p-8">
               <div className="booking-form-block flex flex-wrap items-center justify-between gap-4">
                 <div>
                   <p className="text-sm font-semibold text-[#2a2622]">
@@ -365,8 +365,8 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="booking-form-block mt-7">
-                <div className="grid grid-cols-7 gap-2 pb-3">
+              <div className="booking-form-block mt-6 sm:mt-7">
+                <div className="grid grid-cols-7 gap-1.5 pb-3 sm:gap-2">
                   {weekdayLabels.map((label) => (
                     <span
                       key={label}
@@ -377,10 +377,10 @@ export default function Contact() {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-7 gap-2">
+                <div className="grid grid-cols-7 gap-1.5 sm:gap-2">
                   {calendarCells.map((day, index) => {
                     if (day === null) {
-                      return <div key={`empty-${index}`} className="h-12 rounded-2xl" />;
+                      return <div key={`empty-${index}`} className="h-10 rounded-xl sm:h-12 sm:rounded-2xl" />;
                     }
 
                     const date = new Date(
@@ -397,7 +397,7 @@ export default function Contact() {
                         key={dateValue}
                         type="button"
                         onClick={() => isAvailable && handleDateChange(dateValue)}
-                        className={`h-12 rounded-2xl text-sm font-medium transition-all ${
+                        className={`h-10 rounded-xl text-sm font-medium transition-all sm:h-12 sm:rounded-2xl ${
                           isSelected
                             ? "bg-[#2a2622] text-white shadow-lg shadow-[#2a2622]/15"
                             : isAvailable
@@ -413,11 +413,11 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="booking-form-block mt-8 rounded-[1.7rem] bg-[#f8f4ed] p-4">
+              <div className="booking-form-block mt-6 rounded-[1.35rem] bg-[#f8f4ed] p-3 sm:mt-8 sm:rounded-[1.7rem] sm:p-4">
                 <p className="text-sm font-semibold text-[#2d2824]">
                   Available Time
                 </p>
-                <div className="mt-4 grid gap-3 sm:grid-cols-4 xl:grid-cols-7">
+                <div className="mt-4 grid gap-2.5 sm:grid-cols-4 sm:gap-3 xl:grid-cols-7">
                   {timeSlots.map((time) => {
                     const isSelected = formData.time === time;
 
@@ -426,7 +426,7 @@ export default function Contact() {
                         key={time}
                         type="button"
                         onClick={() => handleTimeChange(time)}
-                        className={`rounded-[1rem] px-3 py-3 text-sm font-medium transition-all ${
+                        className={`rounded-[0.9rem] px-3 py-2.5 text-sm font-medium transition-all sm:rounded-[1rem] sm:py-3 ${
                           isSelected
                             ? "bg-[#2a2622] text-white shadow-lg shadow-[#2a2622]/15"
                             : "border border-[#e2d8cc] bg-white text-[#615850] hover:border-[#2a2622] hover:text-[#2a2622]"
@@ -439,7 +439,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <form className="mt-8 space-y-4" onSubmit={handleSubmit}>
+              <form className="mt-6 space-y-4 sm:mt-8" onSubmit={handleSubmit}>
                 <div className="booking-form-block grid gap-3 md:grid-cols-3">
                   <input
                     name="fullName"
