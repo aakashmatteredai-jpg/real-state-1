@@ -13,6 +13,11 @@ const mainLinks = [
   { label: "Booking Visit", href: "#contact" },
 ];
 
+const contactDetails = [
+  { label: "Email", value: "bookings@rialta.in", href: "mailto:bookings@rialta.in" },
+  { label: "Phone", value: "+91 22496 88200", href: "tel:+912249688200" },
+];
+
 export default function Footer() {
   const footerRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
@@ -78,12 +83,12 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-white px-4 pt-10 md:px-6 md:pt-12 lg:px-8">
+    <footer className="bg-transparent px-4 md:px-6 lg:px-8">
       <div
         ref={footerRef}
-        className="relative -mx-4 overflow-hidden rounded-t-[32px] bg-[#8bb8d5] text-white md:-mx-6 md:rounded-t-[40px] lg:-mx-8"
+        className="relative -mx-4 overflow-hidden rounded-t-[32px] text-white md:-mx-6 md:rounded-t-[40px] lg:-mx-8"
       >
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.2),_transparent_48%)]" />
+        <div className="pointer-events-none absolute inset-0 " />
 
         <div
           ref={imageRef}
@@ -99,7 +104,6 @@ export default function Footer() {
               className="object-cover object-top saturate-[0.9] contrast-[1.08]"
             />
           </div>
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(139,184,213,0.9)_0%,rgba(139,184,213,0.76)_36%,rgba(139,184,213,0.48)_68%,rgba(139,184,213,0.18)_100%)]" />
           <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white/55 via-white/14 to-transparent md:h-32" />
         </div>
 
@@ -119,6 +123,19 @@ export default function Footer() {
                 Luxury property advisory for buyers, sellers, and investors
                 across India&apos;s most dynamic city markets.
               </p>
+
+              <div className="mt-8 space-y-3 text-sm text-white/82">
+                {contactDetails.map((detail) => (
+                  <a
+                    key={detail.label}
+                    href={detail.href}
+                    className="flex w-fit items-center gap-2 transition-colors duration-200 hover:text-white"
+                  >
+                    <span className="font-semibold text-white">{detail.label}:</span>
+                    <span>{detail.value}</span>
+                  </a>
+                ))}
+              </div>
             </div>
 
             <div
