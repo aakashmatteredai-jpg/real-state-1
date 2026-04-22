@@ -365,23 +365,6 @@ export default function Contact() {
                   />
                 </label>
 
-                <div className="booking-form-block rounded-[1.6rem] border border-[#ddd6ca] bg-white px-5 py-4">
-                  <div className="flex flex-wrap items-start justify-between gap-4">
-                    <div>
-                      <p className="text-base font-semibold text-rialta-navy">
-                        Free first consultation
-                      </p>
-                      <p className="mt-1 text-sm leading-relaxed text-rialta-navy/55">
-                        No advance payment required. Just choose a slot and our
-                        team will confirm your appointment.
-                      </p>
-                    </div>
-                    <span className="text-lg font-semibold text-rialta-navy">
-                      Free
-                    </span>
-                  </div>
-                </div>
-
                 {error ? (
                   <p className="booking-form-block rounded-[1.2rem] border border-[#d88963]/30 bg-[#fff3ea] px-4 py-3 text-sm text-[#a34d25]">
                     {error}

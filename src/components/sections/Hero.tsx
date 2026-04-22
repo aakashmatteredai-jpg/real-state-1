@@ -80,6 +80,7 @@ export default function Hero() {
   useEffect(() => {
     if (!isMenuOpen) {
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
       document.documentElement.style.overflow = "";
       return;
     }
@@ -90,12 +91,15 @@ export default function Hero() {
       }
     };
 
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
     document.documentElement.style.overflow = "hidden";
     window.addEventListener("keydown", onKeyDown);
 
     return () => {
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
       document.documentElement.style.overflow = "";
       window.removeEventListener("keydown", onKeyDown);
     };
@@ -186,36 +190,24 @@ export default function Hero() {
       <div
         id="hero-menu-overlay"
         aria-hidden={!isMenuOpen}
-        className={`fixed inset-0 z-[120] bg-[#f5f3ef] text-[#151515] transition-opacity duration-500 ${
+        className={`fixed inset-0 z-[120] text-[#151515] transition-opacity duration-500 ${
           isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        <div className="grid h-full grid-cols-1 lg:grid-cols-[minmax(0,1.3fr)_420px]">
-          <div
-            className={`relative overflow-hidden transition-transform duration-700 ease-out ${
-              isMenuOpen ? "translate-x-0" : "-translate-x-8"
-            }`}
-          >
-            <div className="relative h-[38vh] w-full lg:h-full">
-              <Image
-                src="/hero.jpg"
-                alt="Rialta property view"
-                fill
-                sizes="(min-width: 1024px) calc(100vw - 420px), 100vw"
-                className="object-cover object-[46%_50%] grayscale"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/20" />
-            </div>
+        <button
+          type="button"
+          aria-label="Close menu"
+          onClick={() => setIsMenuOpen(false)}
+          className={`absolute inset-0 border-0 bg-black/28 p-0 backdrop-blur-[2px] transition-opacity duration-500 ${
+            isMenuOpen ? "opacity-100" : "opacity-0"
+          }`}
+        />
 
-            <div className="absolute left-6 top-6 text-sm font-semibold md:left-10 md:top-8 md:text-2xl">
-              Rialta
-            </div>
-          </div>
-
+        <div className="flex h-full justify-end">
           <div
             role="dialog"
             aria-modal="true"
-            className={`relative flex min-h-[62vh] flex-col bg-white px-6 py-6 transition-transform duration-700 ease-out md:px-10 md:py-8 lg:min-h-full ${
+            className={`relative flex h-full w-full max-w-[410px] flex-col bg-[#faf8f4] px-6 py-6 shadow-[-24px_0_70px_rgba(0,0,0,0.18)] transition-transform duration-700 ease-out md:px-10 md:py-8 ${
               isMenuOpen ? "translate-x-0" : "translate-x-full"
             }`}
           >
