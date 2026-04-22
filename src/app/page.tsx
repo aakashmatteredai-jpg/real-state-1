@@ -1,6 +1,6 @@
 import About from "@/components/sections/About";
 import Contact from "@/components/sections/Contact";
-import FeaturedProperties from "@/components/sections/FeaturedProperties";
+import FeaturedProperties from "@/components/sections/Services";
 import Hero from "@/components/sections/Hero";
 import Introduction from "@/components/sections/Introduction";
 import PastTransactions from "@/components/sections/PastTransactions";
