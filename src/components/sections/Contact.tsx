@@ -9,8 +9,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock3,
-  Instagram,
-  Linkedin,
   Mail,
   MapPin,
   MessageCircle,
@@ -70,6 +68,54 @@ type BookingConfirmation = {
   dateLabel: string;
   time: string;
 };
+
+type SocialIconProps = {
+  size?: number;
+  className?: string;
+};
+
+function InstagramIcon({ size = 16, className }: SocialIconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      height={size}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+      viewBox="0 0 24 24"
+      width={size}
+    >
+      <rect x="4.25" y="4.25" width="15.5" height="15.5" rx="4.25" />
+      <circle cx="12" cy="12" r="3.6" />
+      <circle cx="17" cy="7.25" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ size = 16, className }: SocialIconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      height={size}
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.8"
+      viewBox="0 0 24 24"
+      width={size}
+    >
+      <circle cx="6.5" cy="7" r="1.2" fill="currentColor" stroke="none" />
+      <path d="M6.5 10.5V18" />
+      <path d="M11.5 18v-4.25a2.75 2.75 0 0 1 5.5 0V18" />
+      <path d="M11.5 10.5V18" />
+    </svg>
+  );
+}
 
 export default function Contact() {
   const container = useRef<HTMLDivElement>(null);
@@ -241,22 +287,25 @@ export default function Contact() {
 
               <div className="mt-8 flex items-center gap-3">
                 <a
+                  aria-label="Instagram"
                   href="https://www.instagram.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d3c7b8] bg-white/75 text-[#615850] transition-colors hover:border-[#27231e] hover:text-[#27231e]"
                 >
-                  <Instagram size={16} />
+                  <InstagramIcon size={16} />
                 </a>
                 <a
+                  aria-label="LinkedIn"
                   href="https://www.linkedin.com/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d3c7b8] bg-white/75 text-[#615850] transition-colors hover:border-[#27231e] hover:text-[#27231e]"
                 >
-                  <Linkedin size={16} />
+                  <LinkedInIcon size={16} />
                 </a>
                 <a
+                  aria-label="WhatsApp"
                   href="https://wa.me/912249688200"
                   target="_blank"
                   rel="noreferrer"
@@ -265,6 +314,7 @@ export default function Contact() {
                   <MessageCircle size={16} />
                 </a>
                 <a
+                  aria-label="Email"
                   href="mailto:bookings@rialta.in"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-[#d3c7b8] bg-white/75 text-[#615850] transition-colors hover:border-[#27231e] hover:text-[#27231e]"
                 >
