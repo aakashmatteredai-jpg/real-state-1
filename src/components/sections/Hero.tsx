@@ -136,12 +136,26 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className={`object-cover transition-all duration-700 ease-out ${
+            isMenuOpen ? "grayscale brightness-[0.55] saturate-0" : ""
+          }`}
         />
         {/* Gradient overlays for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50" />
+        <div
+          className={`absolute inset-0 bg-gradient-to-b transition-all duration-700 ease-out ${
+            isMenuOpen
+              ? "from-black/55 via-black/35 to-black/60"
+              : "from-black/40 via-black/20 to-black/50"
+          }`}
+        />
         {/* Subtle dark vignette on sides */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
+        <div
+          className={`absolute inset-0 bg-gradient-to-r transition-all duration-700 ease-out ${
+            isMenuOpen
+              ? "from-black/30 via-transparent to-black/30"
+              : "from-black/20 via-transparent to-black/20"
+          }`}
+        />
       </div>
 
       {/* Navbar */}
