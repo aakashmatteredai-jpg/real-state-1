@@ -85,7 +85,7 @@ export default function Footer() {
       >
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.2),_transparent_48%)]" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 pb-[18rem] pt-14 md:px-10 md:pb-[22rem] md:pt-16 lg:px-14 lg:pb-[26rem] lg:pt-20">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 md:px-10 md:pt-16 lg:px-14 lg:pt-20">
           <div className="grid gap-14 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.35fr)] lg:gap-16">
             <div className="max-w-sm">
               <div ref={logoRef}>
@@ -150,31 +150,31 @@ export default function Footer() {
 
         <div
           ref={imageRef}
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex justify-center"
+          className="pointer-events-none relative z-0 mt-10 flex justify-center px-3 md:mt-12 md:px-4"
           aria-hidden="true"
         >
-          <div className="relative h-[16rem] w-[min(1100px,94vw)] md:h-[20rem] lg:h-[24rem]">
-            <div className="absolute bottom-2 left-[8%] h-16 w-28 rounded-full bg-white/35 blur-2xl md:h-20 md:w-36" />
-            <div className="absolute bottom-0 left-1/2 h-20 w-[38%] -translate-x-1/2 rounded-full bg-white/30 blur-3xl md:h-24" />
-            <div className="absolute bottom-4 right-[10%] h-14 w-24 rounded-full bg-white/28 blur-2xl md:h-16 md:w-32" />
+          <div className="relative w-full max-w-[1220px] aspect-[3/2]">
+            <div className="absolute bottom-2 left-[6%] h-16 w-28 rounded-full bg-white/35 blur-2xl md:h-20 md:w-36" />
+            <div className="absolute bottom-0 left-1/2 h-20 w-[42%] -translate-x-1/2 rounded-full bg-white/30 blur-3xl md:h-24" />
+            <div className="absolute bottom-4 right-[8%] h-14 w-24 rounded-full bg-white/28 blur-2xl md:h-16 md:w-32" />
 
-            <div className="absolute inset-x-0 bottom-0 mx-auto h-[88%] w-[88%] overflow-hidden rounded-t-[140px] md:rounded-t-[180px] lg:rounded-t-[220px]">
+            <div className="absolute inset-x-0 bottom-0 mx-auto h-full w-full overflow-hidden rounded-t-[120px] md:rounded-t-[160px] lg:rounded-t-[200px]">
               <div className="absolute inset-0 bg-gradient-to-t from-[#8bb8d5]/10 via-transparent to-white/8" />
 
-              <div className="absolute inset-x-0 bottom-[-8%] h-[115%]">
+              <div className="absolute inset-0">
                 <Image
                   src="/hero.jpg"
                   alt=""
                   fill
-                  sizes="(min-width: 1024px) 980px, 92vw"
-                  className="object-cover object-[58%_56%] scale-[1.08] saturate-[0.9] contrast-[1.08]"
+                  sizes="(min-width: 1280px) 1220px, 94vw"
+                  className="object-contain object-center saturate-[0.9] contrast-[1.08]"
                 />
               </div>
 
-              <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#8bb8d5] via-[#8bb8d5]/18 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#8bb8d5] via-[#8bb8d5]/72 to-transparent md:h-36" />
-              <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#8bb8d5] to-transparent md:w-24" />
-              <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#8bb8d5] to-transparent md:w-24" />
+              <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#8bb8d5] via-[#8bb8d5]/10 to-transparent md:h-28" />
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#8bb8d5] via-[#8bb8d5]/56 to-transparent md:h-32" />
+              <div className="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#8bb8d5]/70 to-transparent md:w-14" />
+              <div className="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-[#8bb8d5]/70 to-transparent md:w-14" />
             </div>
           </div>
         </div>
