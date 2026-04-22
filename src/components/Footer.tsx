@@ -81,11 +81,11 @@ export default function Footer() {
     <footer className="bg-white px-4 pt-10 md:px-6 md:pt-12 lg:px-8">
       <div
         ref={footerRef}
-        className="relative overflow-hidden rounded-t-[32px] bg-[#8bb8d5] text-white md:rounded-t-[40px]"
+        className="relative -mx-4 overflow-hidden rounded-t-[32px] bg-[#8bb8d5] text-white md:-mx-6 md:rounded-t-[40px] lg:-mx-8"
       >
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.2),_transparent_48%)]" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 md:px-10 md:pt-16 lg:px-14 lg:pt-20">
+        <div className="relative z-10 mx-auto max-w-[86rem] px-6 pt-14 md:px-10 md:pt-16 lg:px-14 lg:pt-20">
           <div className="grid gap-14 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.35fr)] lg:gap-16">
             <div className="max-w-sm">
               <div ref={logoRef}>
@@ -150,15 +150,15 @@ export default function Footer() {
 
         <div
           ref={imageRef}
-          className="pointer-events-none relative z-0 mt-10 flex justify-center px-3 md:mt-12 md:px-4"
+          className="pointer-events-none relative z-0 mt-10 w-full md:mt-12"
           aria-hidden="true"
         >
-          <div className="relative w-full max-w-[1220px] aspect-[3/2]">
+          <div className="relative w-full aspect-[3872/2592]">
             <div className="absolute bottom-2 left-[6%] h-16 w-28 rounded-full bg-white/35 blur-2xl md:h-20 md:w-36" />
             <div className="absolute bottom-0 left-1/2 h-20 w-[42%] -translate-x-1/2 rounded-full bg-white/30 blur-3xl md:h-24" />
             <div className="absolute bottom-4 right-[8%] h-14 w-24 rounded-full bg-white/28 blur-2xl md:h-16 md:w-32" />
 
-            <div className="absolute inset-x-0 bottom-0 mx-auto h-full w-full overflow-hidden rounded-t-[120px] md:rounded-t-[160px] lg:rounded-t-[200px]">
+            <div className="absolute inset-x-0 bottom-0 mx-auto h-full w-full overflow-hidden rounded-t-[96px] md:rounded-t-[140px] lg:rounded-t-[180px]">
               <div className="absolute inset-0 bg-gradient-to-t from-[#8bb8d5]/10 via-transparent to-white/8" />
 
               <div className="absolute inset-0">
@@ -166,15 +166,15 @@ export default function Footer() {
                   src="/hero.jpg"
                   alt=""
                   fill
-                  sizes="(min-width: 1280px) 1220px, 94vw"
-                  className="object-contain object-center saturate-[0.9] contrast-[1.08]"
+                  sizes="94vw"
+                  className="object-cover object-center saturate-[0.9] contrast-[1.08]"
                 />
               </div>
 
               <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#8bb8d5] via-[#8bb8d5]/10 to-transparent md:h-28" />
               <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#8bb8d5] via-[#8bb8d5]/56 to-transparent md:h-32" />
-              <div className="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#8bb8d5]/70 to-transparent md:w-14" />
-              <div className="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-[#8bb8d5]/70 to-transparent md:w-14" />
+              <div className="absolute inset-y-0 left-0 w-6 bg-gradient-to-r from-[#8bb8d5]/55 to-transparent md:w-10" />
+              <div className="absolute inset-y-0 right-0 w-6 bg-gradient-to-l from-[#8bb8d5]/55 to-transparent md:w-10" />
             </div>
           </div>
         </div>
