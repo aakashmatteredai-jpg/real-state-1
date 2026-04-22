@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import SectionLabel from "../SectionLabel";
 
 const introImages = [
@@ -11,17 +11,23 @@ const introImages = [
     alt: "Modern Villa External",
   },
   {
-    url: "https://images.unsplash.com/photo-1600607687940-4e524cb35a36?q=80&w=2070&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHJlYWwlMjBzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D",
     alt: "Luxury Poolside",
   },
   {
-    url: "https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?q=80&w=2070&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHJlYWwlMjBzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D",
     alt: "Interior Design",
   },
 ];
 
 export default function Introduction() {
   const container = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(1);
+
+  const prev = () =>
+    setActiveIndex((i) => (i - 1 + introImages.length) % introImages.length);
+  const next = () =>
+    setActiveIndex((i) => (i + 1) % introImages.length);
 
   useGSAP(() => {
     gsap.from(".intro-text", {
@@ -33,46 +39,69 @@ export default function Introduction() {
         start: "top 80%",
       },
     });
-
-    gsap.from(".intro-card", {
-      y: 100,
-      opacity: 0,
-      duration: 1.2,
-      stagger: 0.2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: ".intro-grid",
-        start: "top 75%",
-      },
-    });
   }, { scope: container });
 
+  // Build the ordered triple: [left, center, right]
+  const indices = [
+    (activeIndex - 1 + introImages.length) % introImages.length,
+    activeIndex,
+    (activeIndex + 1) % introImages.length,
+  ];
+
   return (
-    <section ref={container} className="py-32 bg-white">
-      <div className="section-container text-center mb-24">
+    <section ref={container} className="py-32 bg-[#f5f5f3]">
+      <div className="section-container text-center mb-20">
         <div className="flex justify-center">
           <SectionLabel>Introduction</SectionLabel>
         </div>
-        <h2 className="intro-text text-3xl md:text-5xl font-medium max-w-4xl mx-auto leading-tight text-rialta-navy">
-          Discover a refined approach to real estate where design, data, and trust come together to simplify your journey and elevate every decision.
+        <h2 className="intro-text text-3xl md:text-5xl font-medium max-w-4xl mx-auto leading-tight text-rialta-navy mt-6">
+          Discover a refined approach to real estate where design, data, and
+          trust come together to simplify your journey and elevate every
+          decision.
         </h2>
       </div>
 
-      <div className="intro-grid max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
-        {introImages.map((img, index) => (
-          <div 
-            key={index} 
-            className={`intro-card overflow-hidden rounded-[3rem] shadow-xl ${
-              index === 1 ? "md:h-[600px] -translate-y-8" : "md:h-[500px]"
-            }`}
-          >
-            <img 
-              src={img.url} 
-              alt={img.alt} 
-              className="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700 hover:scale-105"
-            />
-          </div>
-        ))}
+      {/* Carousel */}
+      <div className="relative flex items-center justify-center gap-4 px-6">
+        {/* Prev button */}
+        <button
+          onClick={prev}
+          className="absolute left-[calc(50%-340px)] z-10 w-10 h-10 rounded-full bg-rialta-navy text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform"
+          aria-label="Previous"
+        >
+          ‹
+        </button>
+
+        {indices.map((imgIdx, pos) => {
+          const isCenter = pos === 1;
+          return (
+            <div
+              key={imgIdx}
+              className={`
+                overflow-hidden rounded-[2rem] transition-all duration-500 ease-out flex-shrink-0
+                ${isCenter
+                  ? "w-72 md:w-[340px] h-[360px] md:h-[420px] z-10 opacity-100 scale-100"
+                  : "w-52 md:w-[260px] h-[280px] md:h-[320px] z-0 opacity-50 scale-95"
+                }
+              `}
+            >
+              <img
+                src={introImages[imgIdx].url}
+                alt={introImages[imgIdx].alt}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          );
+        })}
+
+        {/* Next button */}
+        <button
+          onClick={next}
+          className="absolute right-[calc(50%-340px)] z-10 w-10 h-10 rounded-full bg-rialta-navy text-white flex items-center justify-center shadow-lg hover:scale-105 transition-transform"
+          aria-label="Next"
+        >
+          ›
+        </button>
       </div>
     </section>
   );
